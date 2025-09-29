@@ -10,7 +10,7 @@ install Requirements.txt
 pip install -r requirements.txt
 ```
 
-## Launchin
+## Run
 ```bash
 streamlit run main.py
 ```
