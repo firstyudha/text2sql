@@ -54,11 +54,15 @@ def sql_to_text(sql_url: str, method: str, question: str, model_input: str, api_
     result = db_chain(question)
 
     # Extract SQL query from intermediate steps
+    final_answer = result.get("result","No Result")
     sql_query = result.get("intermediate_steps", [{}])[1]
-    final_answer = result.get("result", "No answer found")
+    sql_result = result.get("intermediate_steps", [{}])[3]
 
     st.write("### SQL Query:")
     st.code(sql_query, language="sql")
+
+    st.write("### Query Result:")
+    st.code(sql_result, language="sql")
 
     st.write("### Final Answer:")
     st.write(final_answer)
