@@ -1,0 +1,5 @@
+langchain_community
+langchain-ollama
+langchain_experimental
+streamlit
+psycopg2
